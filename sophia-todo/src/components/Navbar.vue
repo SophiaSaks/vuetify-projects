@@ -1,8 +1,8 @@
 <template>
     <nav>
-        <v-app-bar flat app>
+        <v-app-bar flat app class="black">
             <v-btn text class="teal--text" @click="drawer = !drawer">
-            <v-icon>mdi-hamburger</v-icon></v-btn>
+            <v-icon>mdi-menu</v-icon></v-btn>
             <v-toolbar-title class="text-uppercase teal--text">
                 <span class="font-weight-light">Todo</span>
                 <span class="font-weight-bold">Sophia</span>

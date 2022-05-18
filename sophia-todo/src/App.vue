@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="app">
     <Navbar />
  
 
@@ -24,3 +24,9 @@ export default {
   }),
 };
 </script>
+
+<style>
+.app {
+  background-color: #00000;
+}
+</style>
