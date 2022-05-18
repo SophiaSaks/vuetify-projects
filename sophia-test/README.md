@@ -1,4 +1,4 @@
-# sophia-todo
+# sophia-test
 
 ## Project setup
 ```
