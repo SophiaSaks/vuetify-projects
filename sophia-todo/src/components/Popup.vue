@@ -12,9 +12,12 @@
               <h2>Add a new project</h2>
           </v-card-title>
           <v-card-text>
-            <v-form class="px-3">
-              <v-text-field label="Title" v-model="title" prepend-icon="mdi-folder"></v-text-field>
-              <v-textarea label="Information" v-model="content" prepend-icon="mdi-pencil"></v-textarea>
+            <v-form class="px-3"
+               ref="form"
+    v-model="valid"
+    lazy-validation>
+              <v-text-field label="Title" v-model="title" prepend-icon="mdi-folder" :rules="inputRules" required></v-text-field>
+              <v-textarea label="Information" v-model="content" prepend-icon="mdi-pencil" :rules="inputRules"></v-textarea>
 
                         
                       <v-menu
@@ -102,7 +105,34 @@ export default {
         const [month, day, year] = date.split('/')
         return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
       },
+
+      validate () {
+        this.$refs.form.validate()
+      },
+      reset () {
+        this.$refs.form.reset()
+      },
+      resetValidation () {
+        this.$refs.form.resetValidation()
+      },
     },
+
+    data: () => ({
+      valid: true,
+      name: '',
+      inputRules: [
+        v => !!v || 'Field is required',
+        v => (v && v.length >= 3) || 'Field must be at least 3 characters',
+      ],
+      select: null,
+      items: [
+        'Item 1',
+        'Item 2',
+        'Item 3',
+        'Item 4',
+      ],
+      checkbox: false,
+    }),
   
 
 
