@@ -9,6 +9,22 @@
             </v-toolbar-title>
             <v-spacer></v-spacer>
 
+            <v-menu>
+                <template v-slot:activator="{ on, attrs}">
+                     <v-btn depressed slot="activator" color="teal" v-bind="attrs" v-on="on">
+                    <v-icon left>mdi-chevron-down</v-icon>
+                    <span>Menu</span>
+                </v-btn>
+                </template>
+               
+                <v-list>
+                    <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
+                    <v-list-tile-title> {{ link.text }}</v-list-tile-title>
+
+                    </v-list-item>
+                </v-list>
+            </v-menu>
+
             <v-btn text color="teal accent-4">
                 <span>Sign Out</span>
                 <v-icon right>mdi-logout</v-icon>
@@ -21,14 +37,24 @@
         color="teal lighten-2"
         class="pa-4"
       >
+
+      <v-layout column align-center>
+          <v-flex class="mt-5">
         <v-avatar
           class="mb-4"
           color="grey darken-1"
-          size="64"
-        ></v-avatar>
+          size="80"
+        >
+        <img src="/profilbildbättre.jpg">
+        </v-avatar>
+        <p class="white--text font-weight-black">Sophia Saks</p>
 
-        <div class="white--text">Sophia S</div>
+        
+
+             </v-flex>
+        </v-layout>
         </v-sheet>
+       
         <v-divider></v-divider>
             <v-list>
                 <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
