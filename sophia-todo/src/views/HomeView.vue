@@ -3,6 +3,22 @@
   <h1 class="subheading grey--text">Homepage</h1>
 
   <v-container class="my-5">
+
+    <v-layout row class="mb-10">
+      <v-btn small depressed color="grey mr-1" @click="sortBy('title')">
+        <v-icon left small>mdi-folder</v-icon>
+        <span class="caption text-lowercase">by project name</span>
+      </v-btn>
+
+      <v-btn small depressed color="grey mr-1" @click="sortBy('person')">
+        <v-icon left small>mdi-account</v-icon>
+        <span class="caption text-lowercase">by person</span>
+        
+      </v-btn>
+
+      </v-layout>
+    
+
     <v-card flat v-for="project in projects" :key="project.title">
       
         <v-layout row wrap :class="`pa-3 project ${project.status}`">
@@ -43,10 +59,16 @@
         projects: [
           { title: 'Design a new website', person: 'Sophia', due: '18 May 2022', status: 'ongoing', content: 'lorem ipsum'},
           { title: 'learn vuetify', person: 'Sophia', due: '25 May 2022', status: 'complete', content: 'lorem ipsum'},
-          { title: 'Fix the background for website', person: 'Sophia', due: '17 May 2022', status: 'overdue', content: 'lorem ipsum'},
+          { title: 'Fix the background for website', person: 'Mia', due: '17 May 2022', status: 'overdue', content: 'lorem ipsum'},
         ],
       }
-    }
+    },
+    methods: {
+      sortBy(prop){
+        this.projects.sort((a,b) => a[prop] < b[prop] ? -1 : 1)
+      }
+
+    },
 
   }
 </script>
