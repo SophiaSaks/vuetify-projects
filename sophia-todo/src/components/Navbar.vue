@@ -9,9 +9,9 @@
             </v-toolbar-title>
             <v-spacer></v-spacer>
 
-            <v-menu>
+            <v-menu offset-y>
                 <template v-slot:activator="{ on, attrs}">
-                     <v-btn depressed slot="activator" color="teal" v-bind="attrs" v-on="on">
+                     <v-btn depressed slot="activator" color="teal accent-4" v-bind="attrs" v-on="on">
                     <v-icon left>mdi-chevron-down</v-icon>
                     <span>Menu</span>
                 </v-btn>
@@ -52,6 +52,9 @@
         
 
              </v-flex>
+             <v-flex class="mt-4 mb-3">
+                 <Popup />
+             </v-flex>
         </v-layout>
         </v-sheet>
        
@@ -76,7 +79,9 @@
 </template>
 
 <script>
+import Popup from './Popup'
 export default {
+    components: { Popup },
     data() {
         return {
             drawer: false,
