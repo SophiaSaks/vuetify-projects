@@ -53,6 +53,20 @@
 
 <style>
 
+.theme--light.v-chip.complete:not(.v-chip--active)  {
+  background: #66DD8F;
+}
+
+.theme--light.v-chip.ongoing:not(.v-chip--active) {
+  background: #44828F;
+}
+
+.theme--light.v-chip.overdue:not(.v-chip--active) {
+  background: #DD6D66;
+}
+
+
+
 .project.complete {
   border-left: 4px solid #66DD8F;
 }
@@ -65,17 +79,7 @@
   border-left: 4px solid #DD6D66;
 }
 
-.v-chip.complete {
-  background: #66DD8F;
-}
 
-.v-chip.ongoing {
-  background: #44828F;
-}
-
-.v-chip.overdue{
-  background: #DD6D66;
-}
 
 </style>
 
