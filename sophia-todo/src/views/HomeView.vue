@@ -5,16 +5,27 @@
   <v-container class="my-5">
 
     <v-layout row class="mb-10">
-      <v-btn small depressed color="grey mr-1" @click="sortBy('title')">
-        <v-icon left small>mdi-folder</v-icon>
-        <span class="caption text-lowercase">by project name</span>
-      </v-btn>
+      <v-tooltip top>
+        <template v-slot:activator="{ on, attrs }">
+              <v-btn small depressed color="grey mr-1" @click="sortBy('title')" v-bind="attrs" v-on="on">
+              <v-icon left small>mdi-folder</v-icon>
+              <span class="caption text-lowercase">by project name</span>
+            </v-btn>
+        </template>
 
-      <v-btn small depressed color="grey mr-1" @click="sortBy('person')">
+      <span>Sort project by project name</span>
+      </v-tooltip>
+   
+      <v-tooltip top>
+        <template v-slot:activator="{ on, attrs }">
+      <v-btn small depressed color="grey mr-1" @click="sortBy('person')" v-bind="attrs" v-on="on">
         <v-icon left small>mdi-account</v-icon>
         <span class="caption text-lowercase">by person</span>
         
       </v-btn>
+      </template>
+      <span>Sort project by person</span>
+      </v-tooltip>
 
       </v-layout>
     
