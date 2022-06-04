@@ -1,4 +1,4 @@
-<template>
+  <template>
    <v-dialog v-model="dialog" max-width="600">
        <template v-slot:activator="{ on, attrs }">
         <v-btn depressed
@@ -14,38 +14,28 @@
           <v-card-text>
             <v-form class="px-3"
                ref="form"
-    v-model="valid"
-    lazy-validation>
+              v-model="valid"
+              lazy-validation>
               <v-text-field label="Title" v-model="title" prepend-icon="mdi-folder" :rules="inputRules" required></v-text-field>
               <v-textarea label="Information" v-model="content" prepend-icon="mdi-pencil" :rules="inputRules"></v-textarea>
 
                         
-                      <v-menu
-                  v-model="menu2"
-                  :close-on-content-click="false"
-                  transition="scale-transition"
-                  offset-y
-                  max-width="290px"
-                  min-width="auto"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      v-model="computedDateFormatted"
-                      label="Date"
-                      hint="MM/DD/YYYY format"
-                      persistent-hint
-                      prepend-icon="mdi-calendar"
-                      readonly
-                      v-bind="attrs"
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                            <v-date-picker
-                              v-model="date"
-                              no-title
-                              @input="menu2 = false"
-                            ></v-date-picker>
-                          </v-menu>
+                        
+               <v-menu v-model="menu2"
+          :close-on-content-click="false"
+          max-width="290">
+                 <template v-slot:activator="{ on, attrs }">
+                 <v-text-field label="Due date" :value="due"
+                 v-bind="attrs"
+                 v-on="on"
+                 prepend-icon="mdi-calendar">
+                  </v-text-field>
+                 </template>
+                 <v-date-picker v-model="due"></v-date-picker>
+
+                
+                 
+               </v-menu>
                         
 
               <v-btn depressed class="mx-0 mt-3" color="teal accent-4" @click="submit">Add project</v-btn>
@@ -61,11 +51,13 @@
 
 <script>
 
+
 export default {
   data() {
     return {
       title: '',
       content: '',
+      due: null
     }
   },
   methods: {
@@ -73,66 +65,9 @@ export default {
       console.log(this.title, this.content)
     }
   },
-    data: vm => ({
-      date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
-      dateFormatted: vm.formatDate((new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)),
-      menu1: false,
-      menu2: false,
-    }),
+ 
 
-    computed: {
-      computedDateFormatted () {
-        return this.formatDate(this.date)
-      },
-    },
-
-    watch: {
-      date (val) {
-        this.dateFormatted = this.formatDate(this.date)
-      },
-    },
-
-    methods: {
-      formatDate (date) {
-        if (!date) return null
-
-        const [year, month, day] = date.split('-')
-        return `${month}/${day}/${year}`
-      },
-      parseDate (date) {
-        if (!date) return null
-
-        const [month, day, year] = date.split('/')
-        return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
-      },
-
-      validate () {
-        this.$refs.form.validate()
-      },
-      reset () {
-        this.$refs.form.reset()
-      },
-      resetValidation () {
-        this.$refs.form.resetValidation()
-      },
-    },
-
-    data: () => ({
-      valid: true,
-      name: '',
-      inputRules: [
-        v => !!v || 'Field is required',
-        v => (v && v.length >= 3) || 'Field must be at least 3 characters',
-      ],
-      select: null,
-      items: [
-        'Item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
-      ],
-      checkbox: false,
-    }),
+    
   
 
 

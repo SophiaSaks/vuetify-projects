@@ -68,9 +68,9 @@
     data() {
       return {
         projects: [
-          { title: 'Design a new website', person: 'Sophia', due: '18 May 2022', status: 'ongoing', content: 'lorem ipsum'},
-          { title: 'learn vuetify', person: 'Sophia', due: '25 May 2022', status: 'complete', content: 'lorem ipsum'},
-          { title: 'Fix the background for website', person: 'Mia', due: '17 May 2022', status: 'overdue', content: 'lorem ipsum'},
+          { title: 'Design a new website', person: 'Sophia', due: '2022-06-12', status: 'ongoing', content: 'lorem ipsum'},
+          { title: 'learn vuetify', person: 'Sophia', due: '2022-06-02', status: 'complete', content: 'lorem ipsum'},
+          { title: 'Fix the background for website', person: 'Mia', due: '2022-06-02', status: 'overdue', content: 'lorem ipsum'},
         ],
       }
     },
@@ -87,29 +87,29 @@
 <style>
 
 .theme--light.v-chip.complete:not(.v-chip--active)  {
-  background: #66DD8F;
+  background: #67E5A1;
 }
 
 .theme--light.v-chip.ongoing:not(.v-chip--active) {
-  background: #44828F;
+  background: #009688;
 }
 
 .theme--light.v-chip.overdue:not(.v-chip--active) {
-  background: #DD6D66;
+  background: #B35CC9;
 }
 
 
 
 .project.complete {
-  border-left: 4px solid #66DD8F;
+  border-left: 4px solid #67E5A1;
 }
 
 .project.ongoing {
-  border-left: 4px solid #44828F;
+  border-left: 4px solid #009688;
 }
 
 .project.overdue {
-  border-left: 4px solid #DD6D66;
+  border-left: 4px solid #B35CC9;
 }
 
 

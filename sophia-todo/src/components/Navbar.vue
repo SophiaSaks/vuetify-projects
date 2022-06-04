@@ -45,7 +45,7 @@
           color="grey darken-1"
           size="80"
         >
-        <img src="/profilbildbättre.jpg">
+        <img src="/profilbildrymden.jpg">
         </v-avatar>
         <p class="white--text font-weight-black">Sophia Saks</p>
 

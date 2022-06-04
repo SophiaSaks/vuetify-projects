@@ -17,7 +17,7 @@
             <div class="grey--text"> {{ person.role }}</div>
           </v-card-text>
           <v-card-actions>
-            <v-btn depressed color="teal">
+            <v-btn depressed color="teal" class="white--text">
               <v-icon small left>mdi-message</v-icon>
               <span>Message</span>
             </v-btn>
@@ -40,7 +40,7 @@
     data () {
       return {
         team: [
-          { name: 'Sophia S', role: 'UX-designer & frontend', avatar: '/profilbildbättre.jpg'},
+          { name: 'Sophia S', role: 'UX-designer & frontend', avatar: '/profilbildrymden.jpg'},
           { name: 'Mia', role: 'kitty cat and emotional support', avatar: '/miaprofil.jpg'},
           { name: 'Example', role: 'example-role', avatar: '/persona.jpg'},
         ]
