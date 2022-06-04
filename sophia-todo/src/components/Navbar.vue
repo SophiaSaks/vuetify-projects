@@ -1,9 +1,9 @@
 <template>
     <nav>
-        <v-app-bar flat app class="black">
-            <v-btn text class="teal--text" @click="drawer = !drawer">
+        <v-app-bar flat app class="transparent">
+            <v-btn text class="white--text" @click="drawer = !drawer">
             <v-icon>mdi-menu</v-icon></v-btn>
-            <v-toolbar-title class="text-uppercase teal--text">
+            <v-toolbar-title class="text-uppercase white--text">
                 <span class="font-weight-light">Todo</span>
                 <span class="font-weight-bold">Sophia</span>
             </v-toolbar-title>
@@ -11,7 +11,7 @@
 
             <v-menu offset-y>
                 <template v-slot:activator="{ on, attrs}">
-                     <v-btn depressed slot="activator" color="teal accent-4" v-bind="attrs" v-on="on">
+                     <v-btn depressed slot="activator" color="teal accent-3 black--text" v-bind="attrs" v-on="on">
                     <v-icon left>mdi-chevron-down</v-icon>
                     <span>Menu</span>
                 </v-btn>
@@ -25,7 +25,7 @@
                 </v-list>
             </v-menu>
 
-            <v-btn text color="teal accent-4">
+            <v-btn text color="white accent-4">
                 <span>Sign Out</span>
                 <v-icon right>mdi-logout</v-icon>
 

@@ -1,13 +1,13 @@
 <template>
   <div class="home">
-  <h1 class="subheading grey--text">Homepage</h1>
+  <h1 class="subheading white--text">Homepage</h1>
 
   <v-container class="my-5">
 
     <v-layout row class="mb-10">
       <v-tooltip top>
         <template v-slot:activator="{ on, attrs }">
-              <v-btn small depressed color="grey mr-1" @click="sortBy('title')" v-bind="attrs" v-on="on">
+              <v-btn small depressed color="teal accent-3 black--text mr-1" @click="sortBy('title')" v-bind="attrs" v-on="on">
               <v-icon left small>mdi-folder</v-icon>
               <span class="caption text-lowercase">by project name</span>
             </v-btn>
@@ -18,7 +18,7 @@
    
       <v-tooltip top>
         <template v-slot:activator="{ on, attrs }">
-      <v-btn small depressed color="grey mr-1" @click="sortBy('person')" v-bind="attrs" v-on="on">
+      <v-btn small depressed color="teal accent-3 black--text mr-1" @click="sortBy('person')" v-bind="attrs" v-on="on">
         <v-icon left small>mdi-account</v-icon>
         <span class="caption text-lowercase">by person</span>
         
@@ -30,19 +30,19 @@
       </v-layout>
     
 
-    <v-card flat v-for="project in projects" :key="project.title">
+    <v-card flat v-for="project in projects" :key="project.title" class="white">
       
         <v-layout row wrap :class="`pa-3 project ${project.status}`">
           <v-flex xs12 md6>
-            <div class="caption grey--text">Project Title</div>
+            <div class="caption teal--text">Project Title</div>
             <div> {{project.title}}</div>
           </v-flex>
           <v-flex xs6 sm4 md2>
-            <div class="caption grey--text">Person</div>
+            <div class="caption teal--text">Person</div>
             <div> {{project.person}}</div>
           </v-flex>
              <v-flex xs6 sm4 md2>
-            <div class="caption grey--text">Due by</div>
+            <div class="caption teal--text">Due by</div>
             <div>{{project.due}}</div>
           </v-flex>
              <v-flex xs2 sm4 md2>
@@ -87,7 +87,7 @@
 <style>
 
 .theme--light.v-chip.complete:not(.v-chip--active)  {
-  background: #67E5A1;
+  background: #0EC562;
 }
 
 .theme--light.v-chip.ongoing:not(.v-chip--active) {
@@ -101,15 +101,15 @@
 
 
 .project.complete {
-  border-left: 4px solid #67E5A1;
+  border-left: 12px solid #0EC562;
 }
 
 .project.ongoing {
-  border-left: 4px solid #009688;
+  border-left: 12px solid #009688;
 }
 
 .project.overdue {
-  border-left: 4px solid #B35CC9;
+  border-left: 12px solid #B35CC9;
 }
 
 

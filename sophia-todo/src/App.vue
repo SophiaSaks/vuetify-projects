@@ -25,8 +25,9 @@ export default {
 };
 </script>
 
-<style>
-.app {
-  background-color: #00000;
+<style lang="scss">
+.v-application--wrap {
+  background-image: url('/Users/sophiasaks/Documents/GitHub/vuetify-projects/sophia-todo/public/tealbackground.jpg') ;
+  background-size: cover; 
 }
 </style>
